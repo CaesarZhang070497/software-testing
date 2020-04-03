@@ -136,7 +136,64 @@ public class Task4 {
     }
     
     
+    @Test
+    public void ManualTest15() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"a\naaa\r\n",
+                        "(a+$)+"
+                ));
+    }
+
+    @Test
+    public void ManualTest16() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"aa\raaa\naaa\r\n",
+                        "(a+$)+"
+                ));
+    }
     
+    @Test
+    public void ManualTest17() {
+        assertFalse(
+                RegExpMatcher.matches(
+                		"a\rccc\n",
+                        "a$"
+                ));
+    }
+
+    @Test
+    public void ManualTest18() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"a\r\n",
+                        "a$"
+                ));
+    }
+
+    @Test
+    public void ManualTest20() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "6\r\n7\r4\r\n",
+                        "(<1-9>+$)*"
+                ));
+    }
+
+
+
+    @Test
+    public void ManualTest22() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\r\n\n\r\n\r\n",
+                        "$*"
+                ));
+    }
+
+
+
     
     
     
