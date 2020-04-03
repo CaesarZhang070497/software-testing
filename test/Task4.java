@@ -196,7 +196,106 @@ public class Task4 {
 
     
     
+    @Test
+    public void ManualTest23() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\n",
+                        "."
+                ));
+    }
+
+    @Test
+    public void ManualTest26() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r",
+                        "."
+                ));
+    }
+
+    @Test
+    public void ManualTest230() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r\n",
+                        ".."
+                ));
+    }
+
+    @Test
+    public void ManualTest14() {
+        assertFalse(
+                RegExpMatcher.matches(
+                		"\r\n",
+                        "."
+                ));
+    }
+
     
+    @Test
+    public void ManualTest24() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\n\r\n\n\r\n\r",
+                        "${4,6}"
+                ));
+    }
+
+    @Test
+    public void ManualTest25() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\n\r\n\n\r\n\r",
+                        "${4,}"
+                ));
+    }
+
+    @Test
+    public void ManualTest27() {
+        assertFalse(
+                RegExpMatcher.matches(
+                        "\n\r",
+                        "[^$]"
+                ));
+    }
+
+    @Test
+    public void ManualTest28() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\n\r\n\r\r\r\n",
+                        "${5,7}"
+                ));
+    }
+
+    @Test
+    public void ManualTest29() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\r\n",
+                        "$&$"
+                ));
+    }
+
+    @Test
+    public void ManualTest30() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "\r\n",
+                        "$|$"
+                ));
+    }
+
+    @Test
+    public void ManualTest31() {
+        assertTrue(
+                RegExpMatcher.matches(
+                        "58462\radgf\r\n\r",
+                        "([1-9a-z]*$*)*"
+                ));
+    }
+
     
     
     
