@@ -1,0 +1,11 @@
+advantages
+1. Randomly, but smartly, generates junit tests that can combine sequences of method and can invoke constructors for the classes under test.
+2. Can easily estimate the reliability of the software, because there is a large amount of test case, therefore can easily cover input space, and we cannot do this manually.
+
+disadvantage
+1. the cost of test code maintenance is high.
+2. The regression tests generated a few thousand lines of test code in a few seconds, comprising 870 test cases. 
+3. Some of these used more than 20 variables, with confusing names like var1, var2, … varN, making any deep understanding of the test
+programs impossible. 
+4.  human is not able to control values for arguments to tests (which were randomized), making it impossible
+to guarantee equivalence partition coverage on inputs.

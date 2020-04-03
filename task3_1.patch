@@ -1,0 +1,121 @@
+diff --git a/.DS_Store b/.DS_Store
+index 5447ddd..ab97cf5 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/MatchString.java b/MatchString.java
+new file mode 100644
+index 0000000..a69e1cf
+--- /dev/null
++++ b/MatchString.java
+@@ -0,0 +1,9 @@
++package st1920.automaton;
++
++public class MatchString {
++
++	public static boolean matches(String s, REString re) {
++		return RegExpMatcher.matches(s, re.str);
++	}
++	
++}
+diff --git a/REString.java b/REString.java
+new file mode 100644
+index 0000000..926c295
+--- /dev/null
++++ b/REString.java
+@@ -0,0 +1,96 @@
++package st1920.automaton;
++
++public class REString {
++	public String str;
++	
++	public REString(String str) {
++		this.str = str;
++	}
++
++	public REString makeAlpha() { return new REString("a"); }
++
++	public REString makeBeta() { return new REString("b"); }
++
++	public REString makeOne() { return new REString("1"); }
++
++	public REString makeAddAlpha(REString s) {
++		return new REString(s.str + "a");
++	}
++
++	public REString makeAddBeta(REString s) {
++		return new REString(s.str + "b");
++	}
++
++	public REString makeAddOne(REString s) {
++		return new REString(s.str + "1");
++	}
++
++	public REString makeOr(REString s1, REString s2) {
++		return new REString(s1.str + "|" + s2.str);
++	}
++	
++	public REString makeAnd(REString s1, REString s2) {
++		return new REString(s1.str + "&" + s2.str);
++	}
++	
++	public REString makeConcatenation(REString s1, REString s2) {
++		return new REString(s1.str + s2.str);
++	}
++	
++	public REString makeQuestionMark(REString s) {
++		return new REString(s.str + "?");
++	}
++	
++	public REString makeAsterisk(REString s) {
++		return new REString(s.str + "*");
++	}
++	
++	public REString makePlus(REString s) {
++		return new REString(s.str + "+");
++	}
++	
++	public REString makeBraces(REString s, int n) {
++		return new REString(s.str + "{" + n + "}");
++	}
++	
++	public REString makeBracesComma(REString s, int a) {
++		return new REString(s.str + "{" + a + "," + "}");
++	}
++	
++	public REString makeBracesTwoInts(REString s, int m, int n) {
++		return new REString(s.str + "{" + m + "," + n + "}");
++	}
++	
++	public REString makeTilde(REString s) {
++		return new REString("~" + s.str);
++	}
++	
++	public REString makeSquareBrackets(REString s) {
++		return new REString("[" + s.str + "]");
++	}
++
++	public REString makeSquareBracketsTilde(REString s) {
++		return new REString("[^" + s.str + "]");
++	}
++
++	public REString makeDot() {
++		return new REString(".");
++	}
++
++	public REString makeHash() {
++		return new REString("#");
++	}
++
++	public REString makeAt() {
++		return new REString("@");
++	}
++
++	public REString makeString() {
++		return new REString("\"string\"");
++	}
++
++	public REString makeRange(REString s, int n, int m) {
++		return new REString(s.str + "<" + n + "-" + m + ">");
++	}
++
++}
+\ No newline at end of file
