@@ -120,7 +120,7 @@ public class RegExp {
 		REGEXP_ANYSTRING,
 		REGEXP_AUTOMATON,
 		REGEXP_INTERVAL,		
-
+		REGEXP_END_OF_LINE
 	}
 	
 	/** 
