@@ -67,15 +67,18 @@ final public class BasicAutomata {
 		Automaton a = new Automaton();
 		State s1 = new State();
 		State s2 = new State();
-		
+		State s3 = new State();
 		
 		a.initial = s1;
 		
 		s2.accept = true;
 		
 		
-		s1.transitions.add(new Transition('\n', s2));
+		s3.accept = true;
 		
+		
+		s1.transitions.add(new Transition('\n', s2));
+		s1.transitions.add(new Transition('\r', s3));
 		
 		a.deterministic = true;
 		

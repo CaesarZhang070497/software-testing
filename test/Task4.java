@@ -16,7 +16,7 @@ public class Task4 {
     }
     
     @Test
-    public void ManualTest12() {
+    public void ManualTest2() {
         assertFalse(
                 RegExpMatcher.matches(
                         "6",
@@ -59,6 +59,119 @@ public class Task4 {
                         "$"
                 ));
     }
+    
+    
+    
+    @Test
+    public void ManualTest7() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r\n",
+                        "$"
+                ));
+    }
+
+    @Test
+    public void ManualTest8() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r",
+                        "$"
+                ));
+    }
+
+    @Test
+    public void ManualTest9() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r\n",
+                        "$"
+                ));
+    }
+
+    @Test
+    public void ManualTest10() {
+        assertFalse(
+                RegExpMatcher.matches(
+                		"\n\r",
+                        "$"
+                ));
+    }
+    
+
+
+
+    
+    @Test
+    public void ManualTest11() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\r\n",
+                        "$$"
+                ));
+    }
+
+
+
+
+
+    @Test
+    public void ManualTest12() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\n\r",
+                        "$$"
+                ));
+    }
+
+
+
+    @Test
+    public void ManualTest13() {
+        assertTrue(
+                RegExpMatcher.matches(
+                		"\n\r",
+                        "~$~$"
+                ));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
