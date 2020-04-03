@@ -607,8 +607,11 @@ public class RegExp {
 			if (!match(']'))
 				throw new IllegalArgumentException("expected ']' at position " + pos);
 			return e;
-		} 
-		
+		} else if (match('$')) {
+			RegExp r = new RegExp();
+			r.kind = Kind.REGEXP_END_OF_LINE;
+			return r;
+		}
 		else
 			return parseSimpleExp();
 	}
