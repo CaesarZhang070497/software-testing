@@ -59,7 +59,32 @@ final public class BasicAutomata {
 		return a;
 	}
 	
+	/** 
+	 * Returns a new (deterministic) automaton that accepts \n \r \r\n
+	 */
+	public static Automaton makeEndOfLine() {
 
+		Automaton a = new Automaton();
+		State s1 = new State();
+		State s2 = new State();
+		State s3 = new State();
+		State s4 = new State();
+		
+		a.initial = s1;
+		
+		s2.accept = true;
+		s3.accept = true;
+		s4.accept = true;
+		
+		s1.transitions.add(new Transition('\n', s2));
+		s1.transitions.add(new Transition('\r', s3));
+		s3.transitions.add(new Transition('\n', s4));
+		
+		a.deterministic = true;
+		
+		return a;
+		
+	}
 	
 	/** 
 	 * Returns a new (deterministic) automaton that accepts all strings. 
