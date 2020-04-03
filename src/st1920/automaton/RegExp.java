@@ -335,8 +335,9 @@ public class RegExp {
 		case REGEXP_INTERVAL:
 			a = BasicAutomata.makeInterval(min, max, digits);
 			break;
-		
-		
+		case REGEXP_END_OF_LINE:
+			a = BasicAutomata.makeEndOfLine();
+			break;			
 		}
 		
 
